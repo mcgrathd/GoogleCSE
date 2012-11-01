@@ -17,4 +17,18 @@ $wgExtensionCredits['specialpage'][] = array(
     'version' => '0.0.0',
 );
 
+$dir = dirname(__FILE__) . '/';
+
+# Location of the SpecialMyExtension class (Tell MediaWiki to load this file)
+$wgAutoloadClasses['SpecialGoogleCSE'] = $dir . 'SpecialGoogleCSE.php';
+
+# Location of a messages file (Tell MediaWiki to load this file)
+$wgExtensionMessagesFiles['GoogleCSE'] = $dir . 'GoogleCSE.i18n.php';
+
+# Location of an aliases file (Tell MediaWiki to load this file)
+$wgExtensionMessagesFiles['GoogleCSEAlias'] = $dir . 'GoogleCSE.alias.php';
+
+# Tell MediaWiki about the new special page and its class name
+$wgSpecialPages['GoogleCSE'] = 'SpecialGoogleCSE';
+
 ?>
