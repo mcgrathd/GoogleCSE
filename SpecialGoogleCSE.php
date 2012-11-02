@@ -6,7 +6,7 @@ class SpecialGoogleCSE extends SpecialPage {
     }
 
     function execute( $par ) {
-        global $wgRequest, $wgOut, $wgJsMimeType, $wgScriptPath;
+        global $wgRequest, $wgOut, $wgJsMimeType, $wgGoogleCSEcx;
 
         // $request = $this->getRequest(); # XXX: For newer MW version?
         // $output = $this->getOutput();
@@ -17,9 +17,21 @@ class SpecialGoogleCSE extends SpecialPage {
         $param = $wgRequest->getText('param');
 
         # Output the required js script in <head>
-        # XXX: Hardcode the path for now since 1.17 and up use ResourceLoader
-        $wgGoogleCSEJS = $wgScriptPath . "/extensions/GoogleCSE/GoogleCSE.js";
-        $wgOut->addScript( "<script type=\"$wgJsMimeType\" src=\"{$wgGoogleCSEJS}\"><!-- GoogleCSE --></script>\n" );
+        $wgGoogleCSEJS = <<<EOT
+        <!-- GoogleCSE -->
+        <script>
+        (function() {
+          var cx = '$wgGoogleCSEcx';
+          var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+          gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+              '//www.google.com/cse/cse.js?cx=' + cx;
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+        })();
+        </script>
+
+EOT;
+
+        $wgOut->addScript( $wgGoogleCSEJS );
 
         # Set title
         $wgOut->setPageTitle("Google Custom Search Engine");
