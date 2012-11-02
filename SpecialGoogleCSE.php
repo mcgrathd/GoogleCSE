@@ -6,7 +6,7 @@ class SpecialGoogleCSE extends SpecialPage {
     }
 
     function execute( $par ) {
-        global $wgRequest, $wgOut, $wgJsMimeType;
+        global $wgRequest, $wgOut, $wgJsMimeType, $wgScriptPath;
 
         // $request = $this->getRequest(); # XXX: For newer MW version?
         // $output = $this->getOutput();
@@ -17,7 +17,8 @@ class SpecialGoogleCSE extends SpecialPage {
         $param = $wgRequest->getText('param');
 
         # Output the required js script in <head>
-        $wgGoogleCSEJS = dirname( __FILE__ ) . "/GoogleCSE.js";
+        # XXX: Hardcode the path for now since 1.17 and up use ResourceLoader
+        $wgGoogleCSEJS = $wgScriptPath . "/extensions/GoogleCSE/GoogleCSE.js";
         $wgOut->addScript( "<script type=\"$wgJsMimeType\" src=\"{$wgGoogleCSEJS}\"></script>\n" );
 
         # Display CSE HTML tag
