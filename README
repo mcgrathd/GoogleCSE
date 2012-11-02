@@ -1,0 +1,13 @@
+GoogleCSE
+=========
+
+This extension allows you to use the Google Custom Search Engine, either in
+addition to, or as a replacement of, the built in MediaWiki search.
+
+To enabled the extension, add the following line to your LocalSettings.php
+file:
+
+  require_once( "$IP/extensions/GoogleCSE/GoogleCSE.php" );
+
+To access the page, you currently have to visit the Special:GoogleCSE special
+page.
