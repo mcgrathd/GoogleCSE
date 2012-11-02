@@ -15,7 +15,7 @@ $wgExtensionCredits['specialpage'][] = array(
     'email' => 'danmcgrath.ca at gmail.com',
     'url' => 'https://localhost/coming_soon',
     'description' => 'Add [https://www.google.com/cse/ Google CSE] special page to replace the built in MW search',
-    'version' => '0.0.0',
+    'version' => '0.9.0',
 );
 
 $dir = dirname(__FILE__) . '/';
