@@ -21,6 +21,9 @@ class SpecialGoogleCSE extends SpecialPage {
         $wgGoogleCSEJS = $wgScriptPath . "/extensions/GoogleCSE/GoogleCSE.js";
         $wgOut->addScript( "<script type=\"$wgJsMimeType\" src=\"{$wgGoogleCSEJS}\"><!-- GoogleCSE --></script>\n" );
 
+        # Set title
+        $wgOut->setPageTitle("Google Custom Search Engine");
+
         # Display CSE HTML tag
         $csetag = '<gcse:search></gcse:search>';
         $wgOut->addHTML( $csetag );
