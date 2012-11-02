@@ -16,10 +16,9 @@ class SpecialGoogleCSE extends SpecialPage {
         # Get request data from, e.g.
         $param = $wgRequest->getText('param');
 
-        # Do stuff
-        # ...
-        $wikitext = 'Hello world!';
-        $wgOut->addWikiText( $wikitext );
+        # Display CSE HTML tag
+        $csetag = '<gcse:search></gcse:search>';
+        $wgOut->addHTML( $csetag );
     }
 }
 
