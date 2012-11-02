@@ -8,6 +8,7 @@ class SpecialGoogleCSE extends SpecialPage {
     function execute( $par ) {
         global $wgRequest, $wgOut, $wgJsMimeType, $wgGoogleCSEcx;
 
+
         // $request = $this->getRequest(); # XXX: For newer MW version?
         // $output = $this->getOutput();
 
@@ -15,6 +16,13 @@ class SpecialGoogleCSE extends SpecialPage {
 
         # Get request data from, e.g.
         $param = $wgRequest->getText('param');
+
+        if ( !isset($wgGoogleCSEcx) ) {
+            $wgOut->addWikiText( 'Error: $wgGoogleCSEcx is not set!' );
+            $wgOut->addWikiText( 'Please set this variable to your Google CSE cx ID in your LocalSettings.php' );
+
+            return;
+        }    
 
         # Output the required js script in <head>
         $wgGoogleCSEJS = <<<EOT
