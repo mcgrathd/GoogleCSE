@@ -12,6 +12,7 @@ $wgExtensionCredits['specialpage'][] = array(
     'path' => __FILE__,
     'name' => 'Google CSE',
     'author' => 'Dan McGrath',
+    'email' => 'danmcgrath.ca at gmail.com',
     'url' => 'https://localhost/coming_soon',
     'descriptionmsg' => 'googlecse-desc',
     'version' => '0.0.0',
