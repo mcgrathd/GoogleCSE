@@ -24,3 +24,5 @@ $message['qqq'] = array(
     'googlecse' => "Google CSE",
     'googlecse-desc' => "{{desc}}",
 );
+
+?>
