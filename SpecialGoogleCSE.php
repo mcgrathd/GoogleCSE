@@ -6,17 +6,20 @@ class SpecialGoogleCSE extends SpecialPage {
     }
 
     function execute( $par ) {
-        $request = $this->getRequest();
-        $output = $this->getOutput();
+        global $wgRequest, $wgOut;
+
+        // $request = $this->getRequest(); # XXX: For newer MW version?
+        // $output = $this->getOutput();
+
         $this->setHeaders();
 
         # Get request data from, e.g.
-        $param = $request->getText('param');
+        $param = $wgRequest->getText('param');
 
         # Do stuff
         # ...
         $wikitext = 'Hello world!';
-        $output->addWikiText( $wikitext );
+        $wgOut->addWikiText( $wikitext );
     }
 }
 
