@@ -6,7 +6,7 @@ class SpecialGoogleCSE extends SpecialPage {
     }
 
     function execute( $par ) {
-        global $wgRequest, $wgOut, $wgJsMimeType, $wgGoogleCSEcx;
+        global $wgRequest, $wgOut, $wgGoogleCSEcx;
 
 
         // $request = $this->getRequest(); # XXX: For newer MW version?
