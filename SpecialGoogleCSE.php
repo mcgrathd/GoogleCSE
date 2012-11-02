@@ -17,6 +17,7 @@ class SpecialGoogleCSE extends SpecialPage {
         # Get request data from, e.g.
         $param = $wgRequest->getText('param');
 
+        # Check to make sure wgGoogleCSEcx is set, otherwise display error and return
         if ( !isset($wgGoogleCSEcx) ) {
             $wgOut->addWikiText( 'Error: $wgGoogleCSEcx is not set!' );
             $wgOut->addWikiText( 'Please set this variable to your Google CSE cx ID in your LocalSettings.php' );
