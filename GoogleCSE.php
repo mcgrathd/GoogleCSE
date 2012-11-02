@@ -13,7 +13,7 @@ $wgExtensionCredits['specialpage'][] = array(
     'name' => 'Google CSE',
     'author' => 'Dan McGrath',
     'url' => 'https://localhost/coming_soon',
-    'descriptionmsg' => 'Use MediaWiki to interface to Google Custom Search Engine (CSE)',
+    'descriptionmsg' => 'googlecse-desc',
     'version' => '0.0.0',
 );
 
