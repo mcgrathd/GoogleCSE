@@ -17,7 +17,7 @@ class SpecialGoogleCSE extends SpecialPage {
         $param = $wgRequest->getText('param');
 
         # Output the required js script in <head>
-        $wgOut->addScript( "<script type=\"$wgJsMimeType\" src=\"{$this->baseRelDir}/GoogleCSE.js\">\n" );
+        $wgOut->addScript( "<script type=\"$wgJsMimeType\" src=\"{$this->baseRelDir}/GoogleCSE.js\"></script>\n" );
 
         # Display CSE HTML tag
         $csetag = '<gcse:search></gcse:search>';
