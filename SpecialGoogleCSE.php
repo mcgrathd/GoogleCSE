@@ -19,7 +19,7 @@ class SpecialGoogleCSE extends SpecialPage {
         # Output the required js script in <head>
         # XXX: Hardcode the path for now since 1.17 and up use ResourceLoader
         $wgGoogleCSEJS = $wgScriptPath . "/extensions/GoogleCSE/GoogleCSE.js";
-        $wgOut->addScript( "<script type=\"$wgJsMimeType\" src=\"{$wgGoogleCSEJS}\"></script>\n" );
+        $wgOut->addScript( "<script type=\"$wgJsMimeType\" src=\"{$wgGoogleCSEJS}\"><!-- GoogleCSE --></script>\n" );
 
         # Display CSE HTML tag
         $csetag = '<gcse:search></gcse:search>';
