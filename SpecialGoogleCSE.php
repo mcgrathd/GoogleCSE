@@ -26,7 +26,7 @@ class SpecialGoogleCSE extends SpecialPage {
         }    
 
         # Output the required js script in <head>
-        $wgGoogleCSEJS = <<<EOT
+        $wgGoogleCSEjs = <<<EOT
         <!-- GoogleCSE -->
         <script>
         (function() {
@@ -40,7 +40,7 @@ class SpecialGoogleCSE extends SpecialPage {
 
 EOT;
 
-        $wgOut->addScript( $wgGoogleCSEJS );
+        $wgOut->addScript( $wgGoogleCSEjs );
 
         # Set title
         $wgOut->setPageTitle("Google Custom Search Engine");
