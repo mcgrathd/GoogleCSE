@@ -1,4 +1,11 @@
 <?php
+/**
+ * Contains SpecialPage:GoogleCSE code
+ *
+ * @file
+ * @author Dan McGrath
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
 
 class SpecialGoogleCSE extends SpecialPage {
     function __construct() {
