@@ -9,7 +9,15 @@
 
 class SpecialGoogleCSE extends SpecialPage {
     function __construct() {
-        parent::__construct( 'GoogleCSE' );
+        global $wgDisableInternalSearch;
+
+        if ( $wgDisableInternalSearch ) {
+            parent::__construct( 'Search' );
+        } else {
+            parent::__construct( 'GoogleCSE' );
+        }
+
+        return true;
     }
 
     function execute( $par ) {
@@ -21,8 +29,8 @@ class SpecialGoogleCSE extends SpecialPage {
 
         $this->setHeaders();
 
-        # Get request data from, e.g.
-        $param = $wgRequest->getText('param');
+        # Get search terms
+        # $search = $wgRequest->getText('search', $par );
 
         # Check to make sure wgGoogleCSEcx is set, otherwise display error and return
         if ( !isset($wgGoogleCSEcx) ) {
@@ -53,7 +61,7 @@ EOT;
         $wgOut->setPageTitle("Google Custom Search Engine");
 
         # Display CSE HTML tag
-        $csetag = '<gcse:search></gcse:search>';
+        $csetag = '<gcse:search queryParameterName="search"></gcse:search>';
         $wgOut->addHTML( $csetag );
     }
 }

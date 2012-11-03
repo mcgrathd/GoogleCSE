@@ -12,3 +12,12 @@ file:
 
 To access the page, you currently have to visit the Special:GoogleCSE special
 page.
+
+If you wish to replace the built in search with GoogleCSE, you ran add this to
+your LocalSettings.php:
+
+    $wgSpecialPages['Search'] = 'SpecialGoogleCSE';
+    $wgDisableInternalSearch = true;
+
+Note: that if you replace the internal search, you will only see results that
+Google has indexed on your site
