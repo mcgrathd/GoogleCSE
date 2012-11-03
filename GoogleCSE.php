@@ -28,7 +28,7 @@ $wgExtensionCredits['specialpage'][] = array(
     'name' => 'Google CSE',
     'author' => 'Dan McGrath',
     'email' => 'danmcgrath.ca at gmail.com',
-    'url' => 'https://localhost/coming_soon',
+    'url' => 'https://github.com/mcgrathd/GoogleCSE.git',
     'description' => 'Add [https://www.google.com/cse/ Google CSE] special page to replace the built in MW search',
     'version' => '0.9.0',
 );
