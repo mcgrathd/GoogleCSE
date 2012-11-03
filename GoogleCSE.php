@@ -1,4 +1,19 @@
 <?php
+/**
+ * GoogleCSE Extension
+ *
+ * Extension to integrate Google Custom Search Engine (CSE) into searches
+ *
+ * @file
+ * @ingroup Extensions
+ *
+ * @link https://github.com/mcgrathd/GoogleCSE.git
+ *
+ * @author Dan McGrath <danmcgrath.ca@gmail.com>
+ * @copyright © 2012 Dan McGrath
+ * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ */
+
 # Alert the user that this is not a valid entry point to MediaWiki if they try to access the special pages file directly.
 if (!defined('MEDIAWIKI')) {
     echo <<<EOT
